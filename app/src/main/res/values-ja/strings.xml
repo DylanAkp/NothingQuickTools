@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">NothingQuickTools</string>
+  <string name="hbm_name">最大輝度</string>
+  <string name="f2g_name">Glyph に切り替え</string>
+  <string name="gab_name">Glyph の明るさを自動調整</string>
+  <string name="etr_name">拡張されたタッチ応答</string>
+  <string name="hun_name">ヘッドアップ通知</string>
+</resources>
