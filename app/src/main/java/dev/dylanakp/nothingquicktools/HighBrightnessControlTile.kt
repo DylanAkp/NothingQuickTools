@@ -6,12 +6,12 @@ import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
 
-class F2GControlTile : TileService() {
+class HighBrightnessControlTile : TileService() {
 
     override fun onStartListening() {
         super.onStartListening()
 
-        if (isF2GActive()) {
+        if (isHbmActive()) {
             qsTile.state = Tile.STATE_ACTIVE
             qsTile.updateTile()
         } else {
@@ -30,20 +30,18 @@ class F2GControlTile : TileService() {
         if (qsTile.state.equals(Tile.STATE_ACTIVE)) {
             qsTile.state = Tile.STATE_INACTIVE
             qsTile.updateTile()
-            executeShellCommand("su -c 'settings put global led_effect_gestures_flip_ebable 0'")
+            executeShellCommand("su -c 'echo 0 > /sys/panel_feature/hbm_mode'")
         } else {
             qsTile.state = Tile.STATE_ACTIVE
             qsTile.updateTile()
-            executeShellCommand("su -c 'settings put global led_effect_gestures_flip_ebable 1'")
+            executeShellCommand("su -c 'echo 1 > /sys/panel_feature/hbm_mode'")
         }
 
     }
 
 
-    private fun isF2GActive(): Boolean {
-        val command = "su -c 'settings get global led_effect_gestures_flip_ebable'"
-        val output = executeShellCommand(command)
-        return output == "1"
+    private fun isHbmActive(): Boolean {
+        return executeShellCommand("su -c 'cat /sys/panel_feature/hbm_mode'").trim() == "1"
     }
 
     private fun executeShellCommand(command: String): String {

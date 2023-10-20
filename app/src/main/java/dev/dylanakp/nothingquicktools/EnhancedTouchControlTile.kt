@@ -6,12 +6,12 @@ import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
 
-class GABControlTile : TileService() {
+class EnhancedTouchControlTile : TileService() {
 
     override fun onStartListening() {
         super.onStartListening()
 
-        if (isGABActive()) {
+        if (isETRActive()) {
             qsTile.state = Tile.STATE_ACTIVE
             qsTile.updateTile()
         } else {
@@ -30,18 +30,18 @@ class GABControlTile : TileService() {
         if (qsTile.state.equals(Tile.STATE_ACTIVE)) {
             qsTile.state = Tile.STATE_INACTIVE
             qsTile.updateTile()
-            executeShellCommand("su -c 'settings put global led_auto_brightness_enable 0'")
+            executeShellCommand("su -c 'settings put system enhanced_touch_response 0'")
         } else {
             qsTile.state = Tile.STATE_ACTIVE
             qsTile.updateTile()
-            executeShellCommand("su -c 'settings put global led_auto_brightness_enable 1'")
+            executeShellCommand("su -c 'settings put system enhanced_touch_response 1'")
         }
 
     }
 
 
-    private fun isGABActive(): Boolean {
-        val command = "su -c 'settings get global led_auto_brightness_enable'"
+    private fun isETRActive(): Boolean {
+        val command = "su -c 'settings get system enhanced_touch_response'"
         val output = executeShellCommand(command)
         return output == "1"
     }

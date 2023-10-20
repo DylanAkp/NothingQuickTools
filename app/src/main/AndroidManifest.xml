@@ -15,7 +15,7 @@
 
         <service
             android:exported="true"
-            android:name=".HBMControlTile"
+            android:name=".HighBrightnessControlTile"
             android:label="@string/hbm_name"
             android:icon="@drawable/hbm_tile_icon"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -31,7 +31,7 @@
 
         <service
             android:exported="true"
-            android:name=".F2GControlTile"
+            android:name=".FlipGlyphControlTile"
             android:label="@string/f2g_name"
             android:icon="@drawable/f2g_tile_icon"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -47,7 +47,7 @@
 
         <service
             android:exported="true"
-            android:name=".GABControlTile"
+            android:name=".GlyphAutoBrightnessControlTile"
             android:label="@string/gab_name"
             android:icon="@drawable/gab_tile_icon"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -63,7 +63,7 @@
 
         <service
             android:exported="true"
-            android:name=".ETRControlTile"
+            android:name=".EnhancedTouchControlTile"
             android:label="@string/etr_name"
             android:icon="@drawable/etr_tile_icon"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -79,13 +79,58 @@
 
         <service
             android:exported="true"
-            android:name=".HUNControlTile"
+            android:name=".HeadsUpControlTiles"
             android:label="@string/hun_name"
             android:icon="@drawable/hun_tile_icon"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
 
             <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
                 android:value="true" />
+
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+
+        </service>
+
+        <service
+            android:exported="true"
+            android:name=".AudioEnhanceControlTile"
+            android:label="@string/aea_name"
+            android:icon="@drawable/aea_tile_icon"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+
+            <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+
+        </service>
+
+        <service
+            android:exported="true"
+            android:name=".HdrControlTile"
+            android:label="@string/hdr_name"
+            android:icon="@drawable/hdr_tile_icon"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+
+            <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+
+        </service>
+
+        <service
+            android:exported="true"
+            android:name=".RefreshRateControlTile"
+            android:label="@string/refresh_rate"
+            android:icon="@drawable/refreshrate_tile_icon"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
 
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />

@@ -6,18 +6,22 @@ import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
 
-class ETRControlTile : TileService() {
+class RefreshRateControlTile : TileService() {
 
     override fun onStartListening() {
         super.onStartListening()
 
-        if (isETRActive()) {
-            qsTile.state = Tile.STATE_ACTIVE
-            qsTile.updateTile()
+        qsTile.state = Tile.STATE_ACTIVE
+
+        var state = RefreshRateState();
+        if (state == "0") {
+            qsTile.subtitle = getString(R.string.dynamic_rate)
+        } else if (state == "1") {
+            qsTile.subtitle = getString(R.string.high_rate)
         } else {
-            qsTile.state = Tile.STATE_INACTIVE
-            qsTile.updateTile()
+            qsTile.subtitle = getString(R.string.standard_rate)
         }
+        qsTile.updateTile()
     }
 
     override fun onStopListening() {
@@ -27,23 +31,27 @@ class ETRControlTile : TileService() {
     override fun onClick() {
         super.onClick()
 
-        if (qsTile.state.equals(Tile.STATE_ACTIVE)) {
-            qsTile.state = Tile.STATE_INACTIVE
+        if (qsTile.subtitle == getString(R.string.dynamic_rate)) {
+            qsTile.subtitle = getString(R.string.high_rate)
+            executeShellCommand("su -c 'settings put system display_refresh_rate_mode 1'")
             qsTile.updateTile()
-            executeShellCommand("su -c 'settings put system enhanced_touch_response 0'")
+        } else if (qsTile.subtitle == getString(R.string.high_rate)){
+            qsTile.subtitle = getString(R.string.standard_rate)
+            executeShellCommand("su -c 'settings put system display_refresh_rate_mode 2'")
+            qsTile.updateTile()
         } else {
-            qsTile.state = Tile.STATE_ACTIVE
+            qsTile.subtitle = getString(R.string.dynamic_rate)
+            executeShellCommand("su -c 'settings put system display_refresh_rate_mode 0'")
             qsTile.updateTile()
-            executeShellCommand("su -c 'settings put system enhanced_touch_response 1'")
         }
 
     }
 
 
-    private fun isETRActive(): Boolean {
-        val command = "su -c 'settings get system enhanced_touch_response'"
+    private fun RefreshRateState(): String {
+        val command = "su -c 'settings get system display_refresh_rate_mode'"
         val output = executeShellCommand(command)
-        return output == "1"
+        return output.trim()
     }
 
     private fun executeShellCommand(command: String): String {

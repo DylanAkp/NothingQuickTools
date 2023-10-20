@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">NothingQuickTools</string>
     <string name="hbm_name">Max Brightness</string>
-    <string name="f2g_name">Flip 2 Glyph</string>
+    <string name="f2g_name">Flip2Glyph</string>
     <string name="gab_name">Glyph Auto Brightness</string>
-    <string name="etr_name">Enhanced Touch Response</string>
-    <string name="hun_name">Heads Up Notifications</string>
+    <string name="etr_name">Enhanced Touch</string>
+    <string name="hun_name">Heads Up</string>
+    <string name="aea_name">Audio Effect (Dirac)</string>
+    <string name="hdr_name">Enable HDR</string>
+    <string name="high_rate">High</string>
+    <string name="dynamic_rate">Dynamic</string>
+    <string name="standard_rate">Standard</string>
+    <string name="refresh_rate">Refresh Rate</string>
 </resources>

@@ -1,18 +1,17 @@
 package dev.dylanakp.nothingquicktools
 
-import android.content.Intent
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
 
-class HBMControlTile : TileService() {
+class FlipGlyphControlTile : TileService() {
 
     override fun onStartListening() {
         super.onStartListening()
 
-        if (isHbmActive()) {
+        if (isF2GActive()) {
             qsTile.state = Tile.STATE_ACTIVE
             qsTile.updateTile()
         } else {
@@ -31,18 +30,20 @@ class HBMControlTile : TileService() {
         if (qsTile.state.equals(Tile.STATE_ACTIVE)) {
             qsTile.state = Tile.STATE_INACTIVE
             qsTile.updateTile()
-            executeShellCommand("su -c 'echo 0 > /sys/panel_feature/hbm_mode'")
+            executeShellCommand("su -c 'settings put global led_effect_gestures_flip_ebable 0'")
         } else {
             qsTile.state = Tile.STATE_ACTIVE
             qsTile.updateTile()
-            executeShellCommand("su -c 'echo 1 > /sys/panel_feature/hbm_mode'")
+            executeShellCommand("su -c 'settings put global led_effect_gestures_flip_ebable 1'")
         }
 
     }
 
 
-    private fun isHbmActive(): Boolean {
-        return executeShellCommand("su -c 'cat /sys/panel_feature/hbm_mode'").trim() == "1"
+    private fun isF2GActive(): Boolean {
+        val command = "su -c 'settings get global led_effect_gestures_flip_ebable'"
+        val output = executeShellCommand(command)
+        return output == "1"
     }
 
     private fun executeShellCommand(command: String): String {

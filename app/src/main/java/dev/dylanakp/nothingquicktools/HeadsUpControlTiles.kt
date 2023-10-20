@@ -6,7 +6,7 @@ import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.InputStreamReader
 
-class HUNControlTile : TileService() {
+class HeadsUpControlTiles : TileService() {
 
     override fun onStartListening() {
         super.onStartListening()
