@@ -2,4 +2,6 @@
     <string name="app_name">NothingQuickTools</string>
     <string name="hbm_name">Max Brightness</string>
     <string name="f2g_name">Flip 2 Glyph</string>
+    <string name="gab_name">Glyph Auto Brightness</string>
+    <string name="etr_name">Enhanced Touch Response</string>
 </resources>

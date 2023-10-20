@@ -45,6 +45,39 @@
 
         </service>
 
+        <service
+            android:exported="true"
+            android:name=".GABControlTile"
+            android:label="@string/gab_name"
+            android:icon="@drawable/gab_tile_icon"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+
+            <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+
+        </service>
+
+        <service
+            android:exported="true"
+            android:name=".ETRControlTile"
+            android:label="@string/etr_name"
+            android:icon="@drawable/etr_tile_icon"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+
+            <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+
+        </service>
+
+
     </application>
 
 
