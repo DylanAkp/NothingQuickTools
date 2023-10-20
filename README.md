@@ -6,6 +6,7 @@ Here is a list of all quick tiles added :
 - Flip 2 Glyph Switch (root)
 - Glyph Auto Brightness (root)
 - Enhanced Touch Response (root)
+- Heads Up Notification (root)
 
 # XDA Thread
 
