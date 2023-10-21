@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NothingQuickTools</string>
+    <string name="hbm_name">Luminosité Max</string>
+    <string name="f2g_name">Flip2Glyph</string>
+    <string name="gab_name">Luminosité auto Glyph</string>
+    <string name="etr_name">Sensibilité Tactile</string>
+    <string name="hun_name">Heads Up</string>
+    <string name="aea_name">Effets Audio (Dirac)</string>
+    <string name="hdr_name">Activer HDR</string>
+    <string name="high_rate">Haute</string>
+    <string name="dynamic_rate">Dynamique</string>
+    <string name="standard_rate">Standard</string>
+    <string name="refresh_rate">Taux de Rafraichissement</string>
+</resources>
