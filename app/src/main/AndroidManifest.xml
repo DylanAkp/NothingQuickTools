@@ -23,6 +23,9 @@
             <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
                 android:value="true" />
 
+            <meta-data android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true" />
+
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
@@ -37,6 +40,9 @@
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
 
             <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+
+            <meta-data android:name="android.service.quicksettings.ACTIVE_TILE"
                 android:value="true" />
 
             <intent-filter>
@@ -55,6 +61,9 @@
             <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
                 android:value="true" />
 
+            <meta-data android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true" />
+
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
@@ -69,6 +78,9 @@
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
 
             <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+
+            <meta-data android:name="android.service.quicksettings.ACTIVE_TILE"
                 android:value="true" />
 
             <intent-filter>
@@ -87,6 +99,9 @@
             <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
                 android:value="true" />
 
+            <meta-data android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true" />
+
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
@@ -101,6 +116,9 @@
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
 
             <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+
+            <meta-data android:name="android.service.quicksettings.ACTIVE_TILE"
                 android:value="true" />
 
             <intent-filter>
@@ -119,6 +137,9 @@
             <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
                 android:value="true" />
 
+            <meta-data android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true" />
+
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
@@ -131,6 +152,9 @@
             android:label="@string/refresh_rate"
             android:icon="@drawable/refreshrate_tile_icon"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+
+            <meta-data android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true" />
 
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
