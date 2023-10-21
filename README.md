@@ -11,6 +11,8 @@ Here is a list of all quick tiles added :
 - Refresh Rate Switch
 - Dirac Audio Switch
 
+![Example of quicksettings tiles](/screenshot.png "QuickTiles")
+
 # XDA Thread
 
 [XDA Thread](https://xdaforums.com/t/root-high-brightness-mode-qs-tile.4637289/)
