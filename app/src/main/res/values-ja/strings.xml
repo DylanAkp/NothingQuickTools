@@ -6,4 +6,10 @@
   <string name="gab_name">Glyph の明るさを自動調節</string>
   <string name="etr_name">拡張されたタッチ応答</string>
   <string name="hun_name">ヘッドアップ通知</string>
+  <string name="aea_name">拡張されたオーディオ (Dirac Audio)</string>
+  <string name="hdr_name">HDRディスプレイ</string>
+  <string name="high_rate">高</string>
+  <string name="dynamic_rate">ダイナミック</string>
+  <string name="standard_rate">標準</string>
+  <string name="refresh_rate">ディスプレイのリフレッシュレート</string>
 </resources>
