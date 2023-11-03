@@ -11,4 +11,6 @@
     <string name="dynamic_rate">Dynamique</string>
     <string name="standard_rate">Standard</string>
     <string name="refresh_rate">Taux de Rafraichissement</string>
+    <string name="battery_health">Santé batterie</string>
+    <string name="sab_name">Luminosité Automatique</string>
 </resources>
