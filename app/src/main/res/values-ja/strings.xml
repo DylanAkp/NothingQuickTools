@@ -12,6 +12,6 @@
   <string name="dynamic_rate">ダイナミック</string>
   <string name="standard_rate">標準</string>
   <string name="refresh_rate">ディスプレイのリフレッシュレート</string>
-  <string name="battery_health">Battery Health</string>
-  <string name="sab_name">Auto Brightness</string>
+  <string name="battery_health">バッテリの状態</string>
+  <string name="sab_name">明るさの自動調節</string>
 </resources>
